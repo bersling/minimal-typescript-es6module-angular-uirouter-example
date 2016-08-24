@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Typescript Modules</title>
+    
+    <!-- get angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    
+    <!-- get systemJS from somewhere -->
+    <script src="http://code.angularjs.org/tools/system.js"></script>
+    
+    <script>
+      System.config({
+        baseURL: './',
+        defaultJSExtensions: true
+      })
+    </script>
+    <script>
+      System.import('app.js').then(function() {
+        angular.bootstrap(document, ['myApp']);
+      });
+
+    </script>
+
+
+  </head>
+  <body>
+
+
+    <div ui-view></div>
+    <!-- We'll also add some navigation: -->
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+
+  
+  </body>
+</html>
